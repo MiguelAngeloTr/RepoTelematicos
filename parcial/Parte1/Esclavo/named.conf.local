@@ -1,0 +1,20 @@
+//
+// Do any local configuration here
+//
+zone "empresa.local" {
+    type slave;
+    masters { 192.168.50.10; };  # Maestro
+    file "/var/cache/bind/db.empresa.local";
+};
+
+zone "parcial.miguelangeljimenez.com" {
+    type slave;
+    masters { 192.168.50.10; };   // Maestro
+    file "/var/cache/bind/db.parcial.miguelangeljimenez.com";
+};
+
+zone "50.168.192.in-addr.arpa" {
+    type slave;
+    masters { 192.168.50.10; };
+    file "/var/cache/bind/db.192.168.50";
+};
