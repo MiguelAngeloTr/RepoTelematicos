@@ -1,0 +1,29 @@
+//
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+//zona directa
+
+zone "empresa.local" {
+    type master;
+    file "/etc/bind/db.empresa.local";
+    allow-transfer { 192.168.50.11; };
+};
+
+zone "parcial.miguelangeljimenez.com" {
+    type master;
+    file "/etc/bind/db.parcial.miguelangeljimenez.com";
+};
+
+
+//Zona inversa
+
+zone "50.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.192.168.50";
+    allow-transfer { 192.168.50.11; };   // Permite transferencia al esclavo
+};
+
+
+"named.conf.local" 31L, 605B     
