@@ -1,0 +1,18 @@
+$TTL    604800
+@       IN      SOA     maestro.empresa.local. admin.empresa.local. (
+                        2025090101 ; Serial
+                        604800     ; Refresh
+                        86400      ; Retry
+                        2419200    ; Expire
+                        604800 )   ; Negative Cache TTL
+;
+@       IN      NS      maestro.empresa.local.
+@       IN      NS      esclavo.empresa.local.
+
+maestro IN      A       192.168.50.10
+esclavo IN      A       192.168.50.11
+cliente IN      A       192.168.50.12
+www     IN      A       192.168.50.20
+ftp     IN      CNAME   www
+
+~                              
